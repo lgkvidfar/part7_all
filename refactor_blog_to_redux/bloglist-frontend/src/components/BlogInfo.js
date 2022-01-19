@@ -1,15 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Routes,Route, useParams, useMatch } from 'react-router-dom'
 import CommentForm from '../forms/CommentForm'
 import Comment from './Comment'
-import { initializeBlogs, toggleLikesOf } from '../reducers/blogReducer'
+import { toggleLikesOf } from '../reducers/blogReducer'
 
 const BlogInfo = () => {
   const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(initializeBlogs())
-  }, [])
 
   let params = useParams()
   console.log(params)
